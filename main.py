@@ -1,16 +1,14 @@
-# This is a sample Python script.
+class Suit:
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    SYMBOLS = {"clubs":"♣", "diamonds":"♦", "hearts":"♥", "spades":"♠"}
 
+    def __init__(self, description):
+        self._description = description
+        self._symbol = Suit.SYMBOLS[description.lower()]
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    @property
+    def description(self):
+        return self._description
+    @property
+    def symbol(self):
+        return self._symbol
