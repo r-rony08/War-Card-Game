@@ -14,7 +14,7 @@ class Deck:
             self.build()
 
     @property
-    def sie(self):
+    def size(self):
         return len(self._cards)
 
     def build(self):
