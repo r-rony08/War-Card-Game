@@ -1,0 +1,84 @@
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+
+# Distribution / packaging
+build/
+dist/
+*.egg
+*.egg-info/
+*.whl
+*.manifest
+*.spec
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# ----------------------------
+# IDE / Editor
+# ----------------------------
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# ----------------------------
+# Jupyter Notebook
+# ----------------------------
+.ipynb_checkpoints/
+
+# ----------------------------
+# Logs, caches, temp files
+# ----------------------------
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+.cache/
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+
+# ----------------------------
+# Django / Flask
+# ----------------------------
+staticfiles/
+media/
+instance/
+.webassets-cache/
+
+# ----------------------------
+# Environment variables
+# ----------------------------
+.env
+.env.*
+*.env
+
+# ----------------------------
+# OS / System files
+# ----------------------------
+.DS_Store
+Thumbs.db
