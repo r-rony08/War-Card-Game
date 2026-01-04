@@ -1,73 +1,71 @@
-War Card Game.
+War Card Game (OOP)
+A simple, robust implementation of the classic "War" card game using Object-Oriented Programming principles in Python.
 
-simple OOP-based card game in python.
+🛠 Project Structure
+The project is built using four main classes to handle the game logic and card mechanics.
 
 🔹 The Suit Class
- 	The instances of this class shall have two instance attributes: description and symbol.
+Handles the identity of card suits.
 
- 	description can be either: "clubs", "diamonds", "hearts", or "spades".
+Attributes: description ("clubs", "diamonds", "hearts", "spades") and symbol (♣, ♦, ♥, ♠).
 
- 	symbol can be either: ♣, ♦, ♥, or ♠.
+Encapsulation: Read-only attributes using getters.
 
- 	The instance attributes shall be read-only attributes (they should only have getters).
-
- 	The class shall have a class attribute that maps suit descriptions to their corresponding symbols (this should be 	a dictionary).
-
-
+Class Mapping: Features a class-level dictionary that maps descriptions to their corresponding symbols.
 
 🔸 The Card Class
- 	The instances of this class shall have two instance attributes: suit and value.
+Represents a single playing card.
 
- 	suit must be an instance of the Suit class.
+Attributes: suit (an instance of the Suit class) and value.
 
- 	The instance attributes shall be read-only attributes (they should only have getters).
+Encapsulation: Read-only attributes using getters.
 
- 	The class shall have a class attribute that maps the values of the special cards to their written descriptions (11 	to "Jack", 12 to        "Queen", 13 to "King", and 14 to "Ace"). This should be a dictionary.
+Special Cards: Uses a class attribute dictionary to map values:
 
- 	The class shall have two methods: show and is_special.
+11: Jack
 
- 	The show method shall display the value, suit, and symbol of the suit of the card. If the card is special, this 	should be the written description (e.g. "Jack") instead of the value.
+12: Queen
 
- 	The is_special method shall return True if the value of the card is greater than or equal to 11 and False 	otherwise.
+13: King
 
+14: Ace
 
+Methods:
+
+show(): Displays the card's value, suit, and symbol. (e.g., "Jack of Hearts ♥").
+
+is_special(): Returns True if the card value is 11 or higher.
 
 🔹 The Deck Class
- 	The instances of this class shall have one instance attribute: cards. This attribute shall be non-public and it 	shall contain a list of instances of the Card class (these are the cards that belong to the deck).
+Manages a collection of 52 cards.
 
- 	The deck shall have a property called size, which corresponds to the length of the list of cards in the deck.
+Attributes: A non-public list _cards.
 
- 	The user of the Deck class shall be able to choose if the deck is initially empty or not when the deck instance is 	created.
+Properties: size (returns the length of the card list).
 
- 	The class shall have four methods: build, show, shuffle, draw, and add.
+Flexibility: Can be initialized as empty or full.
 
- 	The build method shall build the deck by creating 52 card instances with numbers from 2 to 14 (inclusive) for each 	one of the four possible suits.
- 
- 	The show method shall iterate over the list of card instances and call their show method to show the description 	of each card.
+Methods:
 
- 	The shuffle method shall shuffle the deck (the list of cards in the deck) by calling the shuffle function from the 	random module. (please refer to the section on import statements if you are unfamiliar with import statements).
+build(): Populates the deck with 52 cards (values 2-14 for each suit).
 
- 	The draw method shall return and remove the last card in the list of cards in the deck (this represents removing 	it from the top of the deck).
+show(): Prints the description of every card in the deck.
 
- 	The add method shall insert a new card object to the beginning of the list of cards in the deck (this represents 	removing it from the bottom of the deck).
+shuffle(): Randomizes the card order using the random module.
 
+draw(): Removes and returns the top card (last in list).
 
+add(card): Inserts a card to the bottom (start of list).
 
 🔸 The Player Class
- 	The instances of this class shall have three instance attributes: name, deck, and is_computer.
+Represents the participants (Human or Computer).
 
- 	name shall be a string.
+Attributes: name (public), _deck (read-only), and _is_computer (read-only).
 
- 	deck shall be an instance of the Deck class.
+Methods:
 
- 	is_computer shall be either True or False.
+has_empty_deck(): Returns True if the player has no cards left.
 
- 	name shall be a public attribute and deck and is_computer shall be non-public read-only attributes.
+draw_card(): Draws a card from the player's personal deck.
 
- 	The class shall have four methods: has_empty_deck, draw_card, and add_card.
-
- 	The has_empty_deck method shall return True if the size of the player's deck is 0. Else, it shall return False.
-
- 	The draw_card method shall draw a card from the player's deck if the deck is not empty and return it.
-
- 	The add_card method shall add a card to the bottom of the player's deck.
+add_card(card): Adds a card to the bottom of the player's deck.
